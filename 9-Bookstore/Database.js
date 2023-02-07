@@ -11,7 +11,7 @@ module.exports = class Database {
     return this.#storage[key];
   }
 
-  saveAuthors(author) {
+  saveAuthor(author) {
     this.#storage.authors.push(author);
   }
 
@@ -32,7 +32,7 @@ module.exports = class Database {
   }
 
   removeBooksFromStock(bookName, quantity) {
-    const book = this.findBookByNameByName(bookName);
+    const book = this.findBookByName(bookName);
     book?.removeFromStock(quantity);
   }
 
@@ -53,7 +53,7 @@ module.exports = class Database {
   }
 
   removePostersFromStock(posterName, quantity) {
-    const poster = this.findPosterByNameByName(posterName);
+    const poster = this.findPosterByName(posterName);
     poster?.removeFromStock(quantity);
   }
 
